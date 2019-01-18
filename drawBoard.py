@@ -29,13 +29,4 @@ def board_draw():
         while j < 8:
             pygame.draw.rect(game_display, d_white, (x_i * 50 * 1.5, j * 50 *1.5, block_width, block_height))
             j += 2
-    pygame.display.update() 
 
-pygame.init()
-
-running = True
-while running:
-    board_draw()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
