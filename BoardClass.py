@@ -74,6 +74,9 @@ class Board:
         self.knightWhiteImg = pygame.image.load("knightW.png")
         self.knightBlackImg = pygame.image.load("knightB.png")
 
+        self.knightWhiteImgShaded = pygame.image.load("knightWShaded.png")
+        self.knightBlackImgShaded = pygame.image.load("knightBShaded.png")
+
         self.currentColor = "white"
         self.lastLocation = ()
 

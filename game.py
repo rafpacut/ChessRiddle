@@ -27,6 +27,7 @@ while running:
             x = mousePos[0] // 75
             y = mousePos[1] // 75
             if board.moveKnight(x,y):
+                boardDrawer.draw_knights(board)
                 opponent.makeMove(board)
                 pygame.display.update() 
                 time.sleep(0.03)

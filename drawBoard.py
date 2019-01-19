@@ -2,7 +2,7 @@ import pygame
 
 # defines the width and height of the display
 display_width = 600
-display_height = 680
+display_height = 600
 game_display = pygame.display.set_mode((display_width, display_height))
 
 
@@ -29,9 +29,9 @@ class BoardDrawer:
         for occupiedRow, y in zip(board.isOccupiedMatrix, range(8)):
             for color, x in zip(occupiedRow, range(8)):
                 if color == "w":
-                    game_display.blit(board.knightWhiteImg, (x*75, y*75))
+                    game_display.blit(board.knightWhiteImgShaded, (x*75, y*75))
                 elif color == "b":
-                    game_display.blit(board.knightBlackImg, (x*75, y*75))
+                    game_display.blit(board.knightBlackImgShaded, (x*75, y*75))
 
 
     
