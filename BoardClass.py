@@ -9,14 +9,16 @@ class Board:
             self.currentColor = "white"
 
     def moveKnight(self, x, y):
-        self.isOccupiedMatrix[y][x] = 1
-        if self.currentColor == "white":
-            currentKnightImg = self.knightWhiteImg
-        else:
-            currentKnightImg = self.knightBlackImg
+        if self.isOccupiedMatrix[y][x] == 0:
+            if self.currentColor == "white":
+                currentKnightImg = self.knightWhiteImg
+                self.isOccupiedMatrix[y][x] = "w"
+            else:
+                currentKnightImg = self.knightBlackImg
+                self.isOccupiedMatrix[y][x] = "b"
 
-        game_display.blit(currentKnightImg, (x*75, y*75))
-        self.changeColor()
+            game_display.blit(currentKnightImg, (x*75, y*75))
+            self.changeColor()
 
     def __init__(self):
         self.isOccupiedMatrix = [ [0, 0, 0, 0, 0, 0, 0, 0],

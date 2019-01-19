@@ -8,6 +8,12 @@ from BoardClass import Board
 
 pygame.init()
 board = Board()
+boardDrawer = BoardDrawer()
+
+
+#draw initial board
+boardDrawer.board_draw()
+pygame.display.update() 
 
 running = True
 while running:
@@ -21,4 +27,4 @@ while running:
             board.moveKnight(x,y)
             pygame.display.update() 
             time.sleep(0.03)
-    board_draw()
+    boardDrawer.board_draw()
