@@ -23,7 +23,6 @@ class BoardDrawer:
         self.teal = (0, 128, 128)
         self.blue_black = (50, 50, 50)
 
-
     def draw_knights(self, board):
         x = 0
         y = 0
