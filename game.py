@@ -12,7 +12,7 @@ boardDrawer = BoardDrawer()
 
 
 #draw initial board
-boardDrawer.board_draw()
+boardDrawer.init_board_draw()
 pygame.display.update() 
 
 running = True
@@ -27,4 +27,4 @@ while running:
             board.moveKnight(x,y)
             pygame.display.update() 
             time.sleep(0.03)
-    boardDrawer.board_draw()
+    boardDrawer.draw_knights(board)

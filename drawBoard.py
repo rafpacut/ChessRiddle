@@ -24,9 +24,19 @@ class BoardDrawer:
         self.blue_black = (50, 50, 50)
 
 
+    def draw_knights(self, board):
+        x = 0
+        y = 0
+        for occupiedRow, y in zip(board.isOccupiedMatrix, range(8)):
+            for color, x in zip(occupiedRow, range(8)):
+                if color == "w":
+                    game_display.blit(board.knightWhiteImg, (x*75, y*75))
+                elif color == "b":
+                    game_display.blit(board.knightBlackImg, (x*75, y*75))
+
+
     
-    
-    def board_draw(self):
+    def init_board_draw(self):
         x = 0
         y = 0
         game_display.fill(self.black)
