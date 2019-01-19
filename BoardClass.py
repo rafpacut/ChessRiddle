@@ -9,9 +9,11 @@ class Board:
             self.currentColor = "white"
 
     def isMoveValid(self, x, y):
+        if x < 0 or y < 0 or x > 7 or y > 7:
+            return False
+
         #first move
         if not self.lastLocation: #if is empty
-            self.lastLocation = (x,y)
             return True
         
         if self.isValidKnightMove(x, y) and self.isBlockFree(x,y):
@@ -56,6 +58,8 @@ class Board:
             self.lastLocation = (x, y)
             game_display.blit(currentKnightImg, (x*75, y*75))
             self.changeColor()
+            return True
+        return False
 
     def __init__(self):
         self.isOccupiedMatrix = [ [0, 0, 0, 0, 0, 0, 0, 0],

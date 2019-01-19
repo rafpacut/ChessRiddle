@@ -2,6 +2,7 @@ import pygame
 import time
 from drawBoard import *
 from BoardClass import Board
+from OpponentClass import Opponent
 
 
 
@@ -9,6 +10,7 @@ from BoardClass import Board
 pygame.init()
 board = Board()
 boardDrawer = BoardDrawer()
+opponent = Opponent()
 
 
 #draw initial board
@@ -24,7 +26,9 @@ while running:
             mousePos = pygame.mouse.get_pos()
             x = mousePos[0] // 75
             y = mousePos[1] // 75
-            board.moveKnight(x,y)
-            pygame.display.update() 
-            time.sleep(0.03)
+            if board.moveKnight(x,y):
+                opponent.makeMove(board)
+                pygame.display.update() 
+                time.sleep(0.03)
+
     boardDrawer.draw_knights(board)
