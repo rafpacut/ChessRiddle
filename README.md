@@ -7,4 +7,4 @@ Riddle found on [Mind Your Decisions blog.](https://mindyourdecisions.com/blog/2
 
 The first player who cannot move the knight to a new square loses the game. Who wins if both players play optimally, and what is the winning strategy?
 
-requires python 3, numpy and pygame
+requires python 3 and pygame
